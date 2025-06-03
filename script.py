@@ -1,6 +1,6 @@
 # Detailed Script Description:
 """
-Storm Peak Analysis Script
+Storm Peaks Analysis Script
 
 Purpose:
 This script performs an analysis of storm peak events by combining storm wave data with tide level data. 
@@ -52,7 +52,7 @@ Running the Script:
 1. Ensure Python is installed on your system.
 2. Install the required packages as listed above.
 3. Place the input CSV files ('input.csv', 'tide-levels.csv') in the same directory as the script,
-   or update the 'inputs_csv_path' and 'tide_csv_path' variables in the script.
+   or update the 'input_csv_path' and 'tide_csv_path' variables in the script.
 4. Run the script from your terminal: python your_script_name.py (e.g., python storm_analysis_script.py)
 5. Outputs will be generated in the script's directory and the 'plots' subdirectory.
 """
@@ -283,7 +283,7 @@ def main():
     ]
 
     # File paths
-    inputs_csv_path = 'input.csv'       # Path to the storm input data CSV file
+    input_csv_path = 'input.csv'        # Path to the storm input data CSV file
     tide_csv_path = 'tide-levels.csv'   # Path to the tide level data CSV file
     
     base_output_plot_name = 'storm-peaks' # Base name for generated plot files
@@ -297,19 +297,19 @@ def main():
     label_significant_peaks_threshold_swh = 4.0 # SWH value above which peaks (not necessarily major) are labeled on plots
     # --- End of User Configuration Section ---
 
-    # --- Step 1: Load and Preprocess Storm Data (from inputs_csv_path) ---
-    print(f"Loading storm data from {inputs_csv_path}...")
+    # --- Step 1: Load and Preprocess Storm Data (from input_csv_path) ---
+    print(f"Loading storm data from {input_csv_path}...")
     try:
         # Read storm data, parse the 'datetime' column as dates, and set it as the index
-        df_inputs = pd.read_csv(inputs_csv_path, parse_dates=['datetime'], index_col='datetime')
+        df_inputs = pd.read_csv(input_csv_path, parse_dates=['datetime'], index_col='datetime')
         if df_inputs.empty:
-            print(f"Error: Storm data file {inputs_csv_path} is empty or could not be read.")
+            print(f"Error: Storm data file {input_csv_path} is empty or could not be read.")
             return
     except FileNotFoundError:
-        print(f"Error: File not found - {inputs_csv_path}. Please check the file path.")
+        print(f"Error: File not found - {input_csv_path}. Please check the file path.")
         return
     except Exception as e:
-        print(f"Error reading storm data file {inputs_csv_path}: {e}")
+        print(f"Error reading storm data file {input_csv_path}: {e}")
         return
 
     print("Preprocessing storm data (resampling to hourly and interpolating missing values)...")
