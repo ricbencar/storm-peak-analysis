@@ -19,12 +19,12 @@ This script performs an analysis of storm peak events by combining storm wave da
         ```
 
 2.  **Tide Level CSV (e.g., 'tide-levels.csv'):**
-    * **Expected format:** CSV file. The script expects data rows to represent date, time, and tide value.
-    * It specifically skips the first row (assumed to be a header like "datetime,tide") and then expects three comma-separated values per data line: Date (YYYY-MM-DD), Time (HH:MM), Tide Value (float).
+    * **Expected format:** CSV file. The script expects data rows to represent datetime and tide value.
+    * It specifically skips the first row (assumed to be a header like "datetime,tide") and then expects two comma-separated values per data line: DateTime (YYYY-MM-DD HH:MM), Tide Value (float).
     * **Example (after skipping header):**
         ```csv
-        1980-01-01,12:00,3.061828
-        1980-01-01,01:00,3.483248
+        1980-01-01 12:00,3.061828
+        1980-01-01 01:00,3.483248
         ...
         ```
 
@@ -47,7 +47,7 @@ This script performs an analysis of storm peak events by combining storm wave da
 
 * File paths for input and output.
 * Thresholds for peak detection (general peak height, distance between peaks, major storm height).
-* Periods for which plots should be generated (e.g., full period, last 10 years, last 1 year).
+* Periods for which plots should be generated (e.g., full period, last 10, 5, 2 and 1 years).
 * Threshold for labeling significant peaks (default is 5.0m).
 
 ---
@@ -67,5 +67,5 @@ pip install pandas numpy matplotlib scipy
 1.  Ensure Python is installed on your system.
 2.  Install the required packages as listed above.
 3.  Place the input CSV files (**'input.csv'**, **'tide-levels.csv'**) in the same directory as the script, or update the `inputs_csv_path` and `tide_csv_path` variables in the script.
-4.  Run the script from your terminal: `script.py`
+4.  Run the script from your terminal: `python your_script_name.py` (e.g., `python storm_analysis_script.py`)
 5.  Outputs will be generated in the script's directory and the **'plots'** subdirectory.
