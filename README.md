@@ -4,7 +4,7 @@
 
 This script performs an analysis of storm peak events by combining storm wave data with tide level data. It identifies significant storm peaks based on wave height, filters for major storms, and generates plots visualizing these events over various time periods. It also outputs a CSV file listing the major storm events found over the entire common data period.
 
-![figure](https://github.com/user-attachments/assets/df574db5-333f-4a08-b74b-e6115f6c995c)
+![figure](https://github.com/user-attachments/assets/16541fcf-a53c-4cb0-96d5-5bdeabd9f4e4)
 ---
 
 ## Input Files
