@@ -68,5 +68,5 @@ pip install pandas numpy matplotlib scipy
 1.  Ensure Python is installed on your system.
 2.  Install the required packages as listed above.
 3.  Place the input CSV files (**'input.csv'**, **'tide-levels.csv'**) in the same directory as the script, or update the `inputs_csv_path` and `tide_csv_path` variables in the script.
-4.  Run the script from your terminal: `python your_script_name.py` (e.g., `python storm_analysis_script.py`)
+4.  Run the script from your terminal: `python script.py`
 5.  Outputs will be generated in the script's directory and the **'plots'** subdirectory.
